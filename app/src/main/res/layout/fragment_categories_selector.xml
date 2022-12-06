@@ -19,27 +19,28 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:text="@string/categories_selector_intro_text"
-            app:layout_constraintBottom_toBottomOf="@+id/button"
-            app:layout_constraintEnd_toStartOf="@+id/button"
+            app:layout_constraintBottom_toBottomOf="@+id/later_button"
+            app:layout_constraintEnd_toStartOf="@+id/later_button"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/button"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/later_button"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="12dp"
-            android:background="@drawable/later_round_button_shape"
+            android:background="@drawable/later_button"
             android:text="@string/later_button"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button2"
+            android:id="@+id/continue_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -52,6 +53,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@id/unpressed_tags_gridlayout"/>
 
         <GridLayout
@@ -62,17 +64,17 @@
             android:columnCount="3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toBottomOf="@+id/later_button" />
 
         <GridLayout
             android:id="@+id/unpressed_tags_gridlayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:columnCount="3"
-            app:layout_constraintBottom_toTopOf="@id/button2"
+            app:layout_constraintBottom_toTopOf="@id/continue_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pressed_tags_gridlayout">
@@ -85,7 +87,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/cars_tag"
                 android:textColor="@color/white" />
@@ -98,7 +100,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/restaurants_tag"
                 android:textColor="@color/white" />
@@ -111,7 +113,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/rest_tag"
                 android:textColor="@color/white" />
@@ -124,7 +126,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/job_tag"
                 android:textColor="@color/white" />
@@ -137,7 +139,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/news_tag"
                 android:textColor="@color/white" />
@@ -150,7 +152,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/walks_tag"
                 android:textColor="@color/white" />
@@ -163,7 +165,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/humor_tag"
                 android:textColor="@color/white" />
@@ -176,7 +178,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/serials_tag"
                 android:textColor="@color/white" />
@@ -189,7 +191,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/films_tag"
                 android:textColor="@color/white" />
@@ -202,7 +204,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/politics_tag"
                 android:textColor="@color/white" />
@@ -215,7 +217,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/food_tag"
                 android:textColor="@color/white" />
@@ -228,7 +230,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/recipes_tag"
                 android:textColor="@color/white" />
@@ -241,7 +243,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check_box_background"
                 android:button="@null"
-                android:drawableRight="@drawable/custom_check_box"
+                android:drawableEnd="@drawable/custom_check_box"
                 android:gravity="center"
                 android:text="@string/sport_tag"
                 android:textColor="@color/white" />

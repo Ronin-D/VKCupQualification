@@ -3,4 +3,18 @@
     <string name="categories_selector_intro_text">Отметьте то, что вам интересно, чтобы настроить Дзен</string>
     <string name="later_button">Позже</string>
     <string name="continue_button">Продолжить</string>
+    <string name="humor_tag">Юмор</string>
+    <string name="films_tag">Кино</string>
+    <string name="cars_tag">Автомобили</string>
+    <string name="serials_tag">Сериалы</string>
+    <string name="job_tag">Работа</string>
+    <string name="food_tag">Еда</string>
+    <string name="restaurants_tag">Рестораны</string>
+    <string name="politics_tag">Политика</string>
+    <string name="walks_tag">Прогулки</string>
+    <string name="news_tag">Новости</string>
+    <string name="recipes_tag">Рецепты</string>
+    <string name="rest_tag">Отдых</string>
+    <string name="sport_tag">Спорт</string>
+
 </resources>

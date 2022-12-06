@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CategoriesSelectorFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".CategoriesSelectorFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/constraint">
 
         <TextView
@@ -19,9 +21,10 @@
             android:text="@string/categories_selector_intro_text"
             app:layout_constraintBottom_toBottomOf="@+id/button"
             app:layout_constraintEnd_toStartOf="@+id/button"
-            app:layout_constraintHorizontal_bias="0.513"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/button"
@@ -48,104 +51,202 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unpressed_tags_gridlayout"/>
 
-    <GridLayout
-        android:id="@+id/linear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        <GridLayout
+            android:id="@+id/pressed_tags_gridlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:columnCount="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <GridLayout
-        android:id="@+id/unpressed_tags_gridlayout"
-        android:layout_width="0dp"
-        android:columnCount="4"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear">
-        <CheckBox
-            android:id="@+id/restaurants_tag_check_box2"
-            android:layout_width="wrap_content"
+        <GridLayout
+            android:id="@+id/unpressed_tags_gridlayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/check_box_background"
-            android:button="@null"
-            android:drawableRight="@drawable/custom_check_box"
-            android:gravity="center"
-            android:text="restaurants"
-            android:textColor="@color/white" />
+            android:layout_marginEnd="16dp"
+            android:columnCount="3"
+            app:layout_constraintBottom_toTopOf="@id/button2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pressed_tags_gridlayout">
 
-        <CheckBox
-            android:id="@+id/films_tag_check_box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/check_box_background"
-            android:button="@null"
-            android:drawableRight="@drawable/custom_check_box"
-            android:gravity="center"
-            android:text="films"
-            android:textColor="@color/white" />
+            <CheckBox
+                android:id="@+id/cars_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/cars_tag"
+                android:textColor="@color/white" />
 
-        <CheckBox
-            android:id="@+id/politics_tag_check_box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/check_box_background"
-            android:button="@null"
-            android:drawableRight="@drawable/custom_check_box"
-            android:gravity="center"
-            android:text="politics"
-            android:textColor="@color/white" />
+            <CheckBox
+                android:id="@+id/restaurants_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/restaurants_tag"
+                android:textColor="@color/white" />
 
-        <CheckBox
-            android:id="@+id/food_tag_check_box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/check_box_background"
-            android:button="@null"
-            android:drawableRight="@drawable/custom_check_box"
-            android:gravity="center"
-            android:text="food"
-            android:textColor="@color/white" />
+            <CheckBox
+                android:id="@+id/rest_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/rest_tag"
+                android:textColor="@color/white" />
 
-        <CheckBox
-            android:id="@+id/cars_tag_check_box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/check_box_background"
-            android:button="@null"
-            android:drawableRight="@drawable/custom_check_box"
-            android:gravity="center"
-            android:text="cars"
-            android:textColor="@color/white" />
+            <CheckBox
+                android:id="@+id/job_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/job_tag"
+                android:textColor="@color/white" />
 
-        <CheckBox
-            android:id="@+id/checkBox41"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/check_box_background"
-            android:button="@null"
-            android:drawableRight="@drawable/custom_check_box"
-            android:gravity="center"
-            android:text="Humor"
-            android:textColor="@color/white" />
-    </GridLayout>>
+            <CheckBox
+                android:id="@+id/news_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/news_tag"
+                android:textColor="@color/white" />
 
+            <CheckBox
+                android:id="@+id/walks_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/walks_tag"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/humor_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/humor_tag"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/serials_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/serials_tag"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/films_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/films_tag"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/politics_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/politics_tag"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/food_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/food_tag"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/recipes_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/recipes_tag"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/sport_tag_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check_box_background"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_check_box"
+                android:gravity="center"
+                android:text="@string/sport_tag"
+                android:textColor="@color/white" />
+        </GridLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

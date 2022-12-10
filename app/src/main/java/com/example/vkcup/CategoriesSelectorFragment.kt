@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.CheckBox
+import androidx.core.view.iterator
 import androidx.fragment.app.Fragment
 import com.example.vkcup.databinding.FragmentCategoriesSelectorBinding
+
 private const val KEY_CHECKED_TAGS_COUNT = "checked count"
 class CategoriesSelectorFragment : Fragment() {
 
@@ -43,14 +45,10 @@ class CategoriesSelectorFragment : Fragment() {
                     binding.unpressedTagsGridlayout.viewTreeObserver
                         .removeOnGlobalLayoutListener(this)
                     var columnCount = binding.unpressedTagsGridlayout
-                        .width/(2*binding.humorTagCheckBox.width)
-                    if (columnCount<1){
-                        columnCount = 1
-                    }
+                        .width/(2*binding.humorTagCheckBox.width)+1
                     binding.unpressedTagsGridlayout.columnCount = columnCount
                     binding.pressedTagsGridlayout.columnCount = columnCount
                 }
-
             }
         )
         checkTagState(binding.carsTagCheckBox)
@@ -73,25 +71,21 @@ class CategoriesSelectorFragment : Fragment() {
                 replaceTag(this,isChecked)
             }
         }
-
         binding.carsTagCheckBox.apply {
             setOnCheckedChangeListener { _, isChecked ->
                 replaceTag(this,isChecked)
             }
         }
-
         binding.filmsTagCheckBox.apply {
             setOnCheckedChangeListener { _, isChecked ->
                 replaceTag(this,isChecked)
             }
         }
-
         binding.politicsTagCheckBox.apply {
             setOnCheckedChangeListener { _, isChecked ->
                 replaceTag(this,isChecked)
             }
         }
-
           binding.restaurantsTagCheckBox .apply {
             setOnCheckedChangeListener { _, isChecked ->
                 replaceTag(this,isChecked)
@@ -102,7 +96,6 @@ class CategoriesSelectorFragment : Fragment() {
                 replaceTag(this,isChecked)
             }
         }
-
         binding.serialsTagCheckBox .apply {
             setOnCheckedChangeListener { _, isChecked ->
                 replaceTag(this,isChecked)
@@ -158,9 +151,7 @@ class CategoriesSelectorFragment : Fragment() {
                         view.animate().setListener(null)
                     }
                 })
-
             }
-
         }
         else{
             view.animate().apply {
